@@ -18,3 +18,11 @@ Divergence D = Σ(w_i * v_i), where each constraint violation v_i ∈ [0,1].
 - CLI
 - Reports
 - Dataset support
+## Commands
+- Run tests: pytest
+- Lint: (none yet)
+
+## Repo goals (current)
+- Implement deterministic AOSL scoring + tiers
+- Add pytest + CI
+- Keep dependencies minimal
