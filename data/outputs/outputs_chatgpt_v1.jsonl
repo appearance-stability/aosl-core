@@ -7,3 +7,12 @@
 {"prompt_id":"P04","variant":"good","model":"gold","text":"Plants use sunlight to make their own food. They take in carbon dioxide from the air and water from the soil. With the energy from light, they turn these into sugars that help them grow and release oxygen."}
 
 {"prompt_id":"P05","variant":"good","model":"gold","text":"1. Mix flour, water, yeast, and salt until a dough forms. 2. Knead the dough until it becomes smooth and elastic. 3. Let the dough rise in a warm place until it doubles in size. 4. Bake the dough in a hot oven until the crust turns golden."}
+{"prompt_id":"P01","variant":"bad_fluent","model":"gold","text":"Drinking water helps maintain healthy skin, supports joint function, and assists in regulating body temperature."}
+
+{"prompt_id":"P02","variant":"bad_fluent","model":"gold","text":"Inflation happens when prices rise due to increased demand. It can also result from higher costs of production and supply chain disruptions. Central banks often respond by adjusting interest rates to stabilize the economy."}
+
+{"prompt_id":"P03","variant":"bad_fluent","model":"gold","text":"Artificial intelligence raises concerns about bias in decision-making and the potential loss of jobs as automation increases."}
+
+{"prompt_id":"P04","variant":"bad_fluent","model":"gold","text":"Photosynthesis is a biochemical process in which plants convert light energy into chemical energy through reactions involving chlorophyll and electron transport chains."}
+
+{"prompt_id":"P05","variant":"bad_fluent","model":"gold","text":"First, combine the ingredients and prepare the dough. Then allow it to rest and rise properly. After that, shape the bread and bake it. Finally, remove it from the oven and let it cool."}
