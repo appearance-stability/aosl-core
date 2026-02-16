@@ -19,3 +19,6 @@ dev = ["pytest>=7.0"]
 testpaths = ["tests"]
 addopts = "-q"
 pythonpath = ["."]
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["aosl*"]
