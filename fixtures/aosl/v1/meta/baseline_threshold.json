@@ -1,0 +1,17 @@
+{
+  "dataset_version": "aosl_v1",
+  "artifact": "baseline_threshold",
+  "description": "Initial baseline divergence threshold for AOSL v1 fixtures. Used to map divergence D to stability tiers S0–S3.",
+  "divergence_formula": "D = Σ(w_i * v_i)",
+  "tiers": [
+    { "tier": "S0", "label": "Stable", "min_inclusive": 0.0, "max_exclusive": 0.2 },
+    { "tier": "S1", "label": "Minor divergence", "min_inclusive": 0.2, "max_exclusive": 0.4 },
+    { "tier": "S2", "label": "Moderate instability", "min_inclusive": 0.4, "max_exclusive": 0.6 },
+    { "tier": "S3", "label": "Severe instability", "min_inclusive": 0.6, "max_inclusive": 1.0 }
+  ],
+  "calibration_status": "provisional",
+  "notes": [
+    "Tier boundaries are provisional and intended to be updated after calibration experiments on the fixture set.",
+    "D is expected to be normalized to [0,1]."
+  ]
+}
