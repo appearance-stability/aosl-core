@@ -1,0 +1,48 @@
+{
+  "prompt_id": "p0001",
+  "variant": "bad",
+  "schema_version": "aosl_violations_v1",
+  "constraints": [
+    {
+      "id": "C1_format_numbered_list",
+      "description": "Output uses a numbered list with three items.",
+      "weight": 0.20,
+      "violation": 1.00,
+      "evidence": "Response is paragraph format, not a numbered list."
+    },
+    {
+      "id": "C2_exact_item_count",
+      "description": "Exactly three distinct benefits are provided.",
+      "weight": 0.20,
+      "violation": 0.50,
+      "evidence": "Benefits are presented as 'First/Second/Third' but not as three discrete list items; includes extra generalized summary."
+    },
+    {
+      "id": "C3_disallowed_content_skin_health",
+      "description": "Must not mention skin health or dermatological effects.",
+      "weight": 0.25,
+      "violation": 1.00,
+      "evidence": "Explicitly mentions 'skin health' and skin hydration."
+    },
+    {
+      "id": "C4_distinctness_nonredundant",
+      "description": "Benefits are not redundant or rephrased duplicates.",
+      "weight": 0.20,
+      "violation": 0.25,
+      "evidence": "Hydration + 'overall health' framing is somewhat redundant/vague; still contains partially distinct claims."
+    },
+    {
+      "id": "C5_coherence_local",
+      "description": "Each item is internally coherent and relevant to the prompt.",
+      "weight": 0.15,
+      "violation": 0.10,
+      "evidence": "Claims are broadly relevant but include off-constraint content and vague generalities."
+    }
+  ],
+  "divergence": {
+    "formula": "D = Σ(w_i * v_i)",
+    "value": 0.595,
+    "tier": "S2"
+  },
+  "notes": "Canonical unstable reference output for prompt p0001. Fluent surface, but violates required format and includes disallowed content."
+}
