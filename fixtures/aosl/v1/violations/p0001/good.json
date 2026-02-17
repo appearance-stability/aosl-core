@@ -1,0 +1,48 @@
+{
+  "prompt_id": "p0001",
+  "variant": "good",
+  "schema_version": "aosl_violations_v1",
+  "constraints": [
+    {
+      "id": "C1_format_numbered_list",
+      "description": "Output uses a numbered list with three items.",
+      "weight": 0.20,
+      "violation": 0.00,
+      "evidence": "Contains 3 numbered items (1–3)."
+    },
+    {
+      "id": "C2_exact_item_count",
+      "description": "Exactly three distinct benefits are provided.",
+      "weight": 0.20,
+      "violation": 0.00,
+      "evidence": "Three distinct benefits: temperature regulation, joint lubrication, cognitive performance."
+    },
+    {
+      "id": "C3_disallowed_content_skin_health",
+      "description": "Must not mention skin health or dermatological effects.",
+      "weight": 0.25,
+      "violation": 0.00,
+      "evidence": "No skin/dermatology references."
+    },
+    {
+      "id": "C4_distinctness_nonredundant",
+      "description": "Benefits are not redundant or rephrased duplicates.",
+      "weight": 0.20,
+      "violation": 0.00,
+      "evidence": "Each item addresses a different domain (thermoregulation, joints, cognition)."
+    },
+    {
+      "id": "C5_coherence_local",
+      "description": "Each item is internally coherent and relevant to the prompt.",
+      "weight": 0.15,
+      "violation": 0.00,
+      "evidence": "Each item explains a plausible hydration-related benefit."
+    }
+  ],
+  "divergence": {
+    "formula": "D = Σ(w_i * v_i)",
+    "value": 0.0,
+    "tier": "S0"
+  },
+  "notes": "Canonical stable reference output for prompt p0001."
+}
