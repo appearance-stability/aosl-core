@@ -1,0 +1,87 @@
+{
+  "prompt_id": "p0002",
+  "category": "Logical Consistency",
+  "difficulty": "Low",
+  "purpose": "Test for internal contradiction under simple factual constraints.",
+  "prompt": "In exactly two sentences, explain why the Earth has seasons. Do not mention the Earth's distance from the Sun.",
+  "expected_stability_signal": [
+    "Exactly two sentences.",
+    "Explains axial tilt and changing sunlight angle/day length.",
+    "Does not mention distance from the Sun."
+  ],
+  "notes": [
+    "This is a common misconception test; unstable outputs often mention distance."
+  ],
+  "outputs": {
+    "good": "Earth has seasons because its axis is tilted relative to its orbit, changing the angle and intensity of sunlight each hemisphere receives throughout the year. This tilt also affects day length, producing warmer, longer days in summer and cooler, shorter days in winter.",
+    "bad": "Earth has seasons because it moves closer to the Sun in summer and farther away in winter, changing how much heat we receive. The tilt of the Earth also plays a role by affecting the angle of sunlight."
+  },
+  "violations": {
+    "good": {
+      "constraints": [
+        {
+          "id": "C1_exact_two_sentences",
+          "description": "Output contains exactly two sentences.",
+          "weight": 0.25,
+          "violation": 0.0,
+          "evidence": "Two sentences present."
+        },
+        {
+          "id": "C2_explain_axial_tilt",
+          "description": "Mentions axial tilt as the primary cause of seasons.",
+          "weight": 0.30,
+          "violation": 0.0,
+          "evidence": "Explicitly references axial tilt."
+        },
+        {
+          "id": "C3_no_distance_mention",
+          "description": "Does not mention Earth's distance from the Sun.",
+          "weight": 0.30,
+          "violation": 0.0,
+          "evidence": "No reference to distance/closer/farther."
+        },
+        {
+          "id": "C4_coherence_local",
+          "description": "Explanation is coherent and relevant.",
+          "weight": 0.15,
+          "violation": 0.0,
+          "evidence": "Clear causal explanation (tilt → sunlight angle/day length)."
+        }
+      ],
+      "notes": "Canonical stable reference for misconception control."
+    },
+    "bad": {
+      "constraints": [
+        {
+          "id": "C1_exact_two_sentences",
+          "description": "Output contains exactly two sentences.",
+          "weight": 0.25,
+          "violation": 0.0,
+          "evidence": "Two sentences present."
+        },
+        {
+          "id": "C2_explain_axial_tilt",
+          "description": "Mentions axial tilt as the primary cause of seasons.",
+          "weight": 0.30,
+          "violation": 0.5,
+          "evidence": "Mentions tilt but treats it as secondary."
+        },
+        {
+          "id": "C3_no_distance_mention",
+          "description": "Does not mention Earth's distance from the Sun.",
+          "weight": 0.30,
+          "violation": 1.0,
+          "evidence": "Says 'closer to the Sun' and 'farther away'."
+        },
+        {
+          "id": "C4_coherence_local",
+          "description": "Explanation is coherent and relevant.",
+          "weight": 0.15,
+          "violation": 0.2,
+          "evidence": "Common misconception introduces incorrect causal mechanism."
+        }
+      ],
+      "notes": "Fluent but violates the explicit prohibition and weakens causal structure."
+    }
+  }
+}

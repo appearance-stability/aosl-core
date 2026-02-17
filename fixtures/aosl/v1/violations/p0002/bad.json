@@ -1,0 +1,41 @@
+{
+  "prompt_id": "p0002",
+  "variant": "bad",
+  "schema_version": "aosl_violations_v1",
+  "constraints": [
+    {
+      "id": "C1_exact_two_sentences",
+      "description": "Output contains exactly two sentences.",
+      "weight": 0.25,
+      "violation": 0.0,
+      "evidence": "Two sentences present."
+    },
+    {
+      "id": "C2_explain_axial_tilt",
+      "description": "Mentions axial tilt as the primary cause of seasons.",
+      "weight": 0.3,
+      "violation": 0.5,
+      "evidence": "Mentions tilt but treats it as secondary."
+    },
+    {
+      "id": "C3_no_distance_mention",
+      "description": "Does not mention Earth's distance from the Sun.",
+      "weight": 0.3,
+      "violation": 1.0,
+      "evidence": "Says 'closer to the Sun' and 'farther away'."
+    },
+    {
+      "id": "C4_coherence_local",
+      "description": "Explanation is coherent and relevant.",
+      "weight": 0.15,
+      "violation": 0.2,
+      "evidence": "Common misconception introduces incorrect causal mechanism."
+    }
+  ],
+  "divergence": {
+    "formula": "D = Σ(w_i * v_i)",
+    "value": 0.48,
+    "tier": "S2"
+  },
+  "notes": "Fluent but violates the explicit prohibition and weakens causal structure."
+}

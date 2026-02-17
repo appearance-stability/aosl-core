@@ -1,0 +1,1 @@
+Earth has seasons because it moves closer to the Sun in summer and farther away in winter, changing how much heat we receive. The tilt of the Earth also plays a role by affecting the angle of sunlight.
