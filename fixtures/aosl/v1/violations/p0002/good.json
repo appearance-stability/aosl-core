@@ -1,0 +1,41 @@
+{
+  "prompt_id": "p0002",
+  "variant": "good",
+  "schema_version": "aosl_violations_v1",
+  "constraints": [
+    {
+      "id": "C1_exact_two_sentences",
+      "description": "Output contains exactly two sentences.",
+      "weight": 0.25,
+      "violation": 0.0,
+      "evidence": "Two sentences present."
+    },
+    {
+      "id": "C2_explain_axial_tilt",
+      "description": "Mentions axial tilt as the primary cause of seasons.",
+      "weight": 0.3,
+      "violation": 0.0,
+      "evidence": "Explicitly references axial tilt."
+    },
+    {
+      "id": "C3_no_distance_mention",
+      "description": "Does not mention Earth's distance from the Sun.",
+      "weight": 0.3,
+      "violation": 0.0,
+      "evidence": "No reference to distance/closer/farther."
+    },
+    {
+      "id": "C4_coherence_local",
+      "description": "Explanation is coherent and relevant.",
+      "weight": 0.15,
+      "violation": 0.0,
+      "evidence": "Clear causal explanation (tilt → sunlight angle/day length)."
+    }
+  ],
+  "divergence": {
+    "formula": "D = Σ(w_i * v_i)",
+    "value": 0.0,
+    "tier": "S0"
+  },
+  "notes": "Canonical stable reference for misconception control."
+}

@@ -200,7 +200,7 @@ def _validate_spec_minimum(spec: Dict[str, Any]) -> None:
     return
 
 
-def build_from_spec(spec_path: str) -> List[str]:
+def build_from_spec(spec_path: str) -> list[str]:
     spec = _read_json(spec_path)
     _validate_spec_minimum(spec)
 
@@ -219,9 +219,9 @@ def build_from_spec(spec_path: str) -> List[str]:
     _write_text(out_good_path, str(spec["outputs"]["good"]))
     _write_text(out_bad_path, str(spec["outputs"]["bad"]))
 
-    # Write violations with computed divergence + tier
-    written: List[str] = [prompt_md_path, out_good_path, out_bad_path]
+    written = [prompt_md_path, out_good_path, out_bad_path]
 
+    # Write violations with computed divergence + tier
     for variant, vio_path in [("good", vio_good_path), ("bad", vio_bad_path)]:
         constraints = spec["violations"][variant]["constraints"]
         divergence_value = _compute_divergence(constraints)
@@ -230,4 +230,39 @@ def build_from_spec(spec_path: str) -> List[str]:
         vio_obj = {
             "prompt_id": pid,
             "variant": variant,
-            "schema_version": "aosl_violatio
+            "schema_version": "aosl_violations_v1",
+            "constraints": constraints,
+            "divergence": {
+                "formula": "D = Σ(w_i * v_i)",
+                "value": divergence_value,
+                "tier": tier,
+            },
+            "notes": spec["violations"][variant].get("notes", ""),
+        }
+
+        _write_json(vio_path, vio_obj)
+        written.append(vio_path)
+
+    return written
+
+
+def main(argv: list[str]) -> int:
+    if len(argv) != 2:
+        print("Usage: python tools/aosl_fixture_builder.py <spec.json>")
+        return 2
+
+    spec_path = argv[1]
+    if not os.path.exists(spec_path):
+        print(f"Spec not found: {spec_path}")
+        return 2
+
+    written = build_from_spec(spec_path)
+    print("Wrote:")
+    for p in written:
+        print(f"- {p}")
+    return 0
+
+
+if __name__ == "__main__":
+    import sys
+    raise SystemExit(main(sys.argv))

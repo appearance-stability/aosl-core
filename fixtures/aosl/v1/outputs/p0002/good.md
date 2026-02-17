@@ -1,0 +1,1 @@
+Earth has seasons because its axis is tilted relative to its orbit, changing the angle and intensity of sunlight each hemisphere receives throughout the year. This tilt also affects day length, producing warmer, longer days in summer and cooler, shorter days in winter.
